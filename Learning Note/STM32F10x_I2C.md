@@ -1,5 +1,5 @@
 # 1.Introduction
----
+
 ## 1.1 Defintion
 
 **I2C** (Inter-Integrated Circuit) bus interface serves as an interface between the microcontroller and the serial I2C bus.
@@ -13,7 +13,6 @@
 5. Depending on specific implementation **DMA** capability can be available for reduced CPU overload.
 
 # 2. Main features
----
 
 ## 2.1 Main features
 - **Parallel-bus / I2C protocol converter**
@@ -23,6 +22,18 @@
   + Standard Speed (up to 100KHz)
   + Fast Speed (up tp 400KHz)
 - Analog noise filter
+- Optional clock stretching 
+- 1 byte buffer with DMA capability
+- Configurable **PEC** (packet error cheching) generation or varification:
+  + PEC value can be transmitted as last byte in Tx mode
+  + PEC error checking for last received byte
+- SMBus 2.0 Compatibility
+  + 25 ms clock low timeout delay
+  + 10 ms master cumullative clock low extend time
+  + 25 ms slave cumulative clock low extend time
+  + Hardware PEC generation / verification with ACK control
+  + Address Resolution Protocol (ARP) supported
+- PMBus Compatibillity
 
 ## 2.2 I2C Master features
 - Clock generation
@@ -41,6 +52,9 @@
 - Error flag
   + Arbitration lost condition for master mode
   + Acknowledgement failure after address / data transmission
+  + Detection of misplaced start or stop condition
+  + Overrun / Underrun if clock stretching is disabled
 
-
-  + 
+## 2.4 Interrupt
+- 1 interrupt for successful address / data communication
+- 1 interrupt for error condition
