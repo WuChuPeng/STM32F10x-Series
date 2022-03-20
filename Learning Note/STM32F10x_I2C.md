@@ -65,15 +65,27 @@
 
 # 3. Functional Description
 
-**Serial to Parallel**
+## 3.1 Serial to Parallel
 In addition to receiving and transmitting data, this interface converts it from **serial to parallel** format and vice versa. 
 
-**Enable or Disabled Interrupt**
+## 3.2 Enable or Disabled Interrupt
 
 The interrupts are enabled or disabled by software.
 
-**Structure**
+## 3.3 Structure
 The interface is connected to the I2C bus by a data pin (**SDA**) and by a clock pin (**SCL**).
 
-## 3.1 
+## 3.4 I2C bus
+It can be connected with a standard (up to 100KHz) or fast (up to 400KHz) I2C bus
+
+## 3.5 Mode selection
+
+The interface can operate in one of the four following modes:
+- Slave transmitter
+- Slave receiver
+- Master transmitter
+- Master receiver
+
+By default, it operates in **Slave Mode**. The interface automatically switches from slave to mastr, after generates a **STRAT** condition and from master to slave.
+
 
