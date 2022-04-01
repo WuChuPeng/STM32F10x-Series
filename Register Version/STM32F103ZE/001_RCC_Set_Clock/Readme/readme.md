@@ -1,6 +1,6 @@
 # Information
 
-| Tile | Content |
+| Title | Content |
 | :--: | :--: |
 | Program | RCC: Set clock |
 | Author | Silicon Wu |
